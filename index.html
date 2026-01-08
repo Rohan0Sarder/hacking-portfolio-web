@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rohan Sarder | Cyber Security Specialist</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Courier New', monospace;
+}
+
+body{
+  background:black;
+  color:#00ff9c;
+  overflow-x:hidden;
+}
+
+/* ENTER OVERLAY */
+#enterScreen{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  background:black;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:9999;
+}
+#enterScreen h1{
+  text-shadow:0 0 20px #00ff9c;
+}
+#enterScreen button{
+  margin-top:20px;
+  padding:12px 30px;
+  background:black;
+  border:2px solid #00ff9c;
+  color:#00ff9c;
+  cursor:pointer;
+}
+
+/* MATRIX */
+canvas{
+  position:fixed;
+  top:0;left:0;
+  z-index:-1;
+}
+
+/* HEADER */
+header{
+  text-align:center;
+  padding:80px 15px;
+}
+header h1{
+  font-size:clamp(2rem,5vw,3rem);
+  text-shadow:0 0 15px #00ff9c;
+}
+.typing{
+  margin-top:15px;
+  font-size:clamp(1rem,3vw,1.2rem);
+  min-height:30px;
+}
+
+/* SECTION */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 15px;
+}
+
+/* ABOUT */
+.about{
+  display:flex;
+  gap:40px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.profile-pic{
+  flex:1;
+  text-align:center;
+}
+.profile-pic img{
+  width:230px;
+  height:230px;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid #00ff9c;
+  box-shadow:0 0 25px #00ff9c;
+}
+.about-text{
+  flex:2;
+}
+
+/* HEADINGS */
+h2{
+  margin-bottom:20px;
+  border-left:5px solid #00ff9c;
+  padding-left:15px;
+}
+
+/* SKILLS */
+.skills span{
+  display:inline-block;
+  margin:8px;
+  padding:10px 16px;
+  border:1px solid #00ff9c;
+  border-radius:6px;
+  transition:0.3s ease;
+}
+.skills span:hover{
+  box-shadow:0 0 15px #00ff9c;
+  transform:translateY(-5px);
+}
+
+/* PROJECT */
+.project{
+  border:1px solid #00ff9c;
+  padding:18px;
+  margin-bottom:20px;
+  border-radius:6px;
+  transition:0.3s ease;
+}
+.project:hover{
+  box-shadow:0 0 15px #00ff9c;
+  transform:translateY(-5px);
+}
+
+/* CONTACT */
+.contact p{
+  margin:10px 0;
+  padding:10px;
+  border:1px solid #00ff9c;
+  border-radius:6px;
+  transition:0.3s ease;
+}
+.contact p:hover{
+  box-shadow:0 0 15px #00ff9c;
+  transform:translateY(-5px);
+}
+
+/* TEXT HOVER */
+.about-text p{
+  transition:0.3s ease;
+}
+.about-text p:hover{
+  text-shadow:0 0 10px #00ff9c;
+}
+
+/* SCROLL ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(80px);
+  transition:1s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:25px;
+  border-top:1px solid #00ff9c;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .about{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ENTER SCREEN -->
+<div id="enterScreen">
+  <h1>ACCESS GRANTED</h1>
+  <button onclick="enterSite()">ENTER SYSTEM</button>
+</div>
+
+<audio id="hackSound" loop>
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-digital-technology-interface-2573.mp3" type="audio/mpeg">
+</audio>
+
+<canvas id="matrix"></canvas>
+
+<header class="reveal">
+  <h1>Rohan Sarder</h1>
+  <div class="typing" id="typing"></div>
+</header>
+
+<section>
+<h2 class="reveal">👨‍💻 About Me</h2>
+<div class="about reveal">
+  <div class="profile-pic">
+    <img src="profile.jpg" alt="Rohan Sarder">
+  </div>
+  <div class="about-text">
+    <p>
+      Cyber Security enthusiast focused on Ethical Hacking,
+      Web Penetration Testing and Red Team operations.
+    </p>
+  </div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>🛠 Skills</h2>
+<div class="skills">
+  <span>Kali Linux</span>
+  <span>Ethical Hacking</span>
+  <span>Web Pentesting</span>
+  <span>Burp Suite</span>
+  <span>Nmap</span>
+  <span>Metasploit</span>
+</div>
+</section>
+
+<section class="reveal">
+<h2>📂 Projects</h2>
+<div class="project">
+  <h3>Web Pentesting</h3>
+  <p>OWASP Top 10 real-world testing.</p>
+</div>
+</section>
+
+<section class="reveal contact">
+<h2>📞 Contact</h2>
+<p>Email: yourmail@example.com</p>
+<p>GitHub: github.com/yourusername</p>
+<p>LinkedIn: linkedin.com/in/yourprofile</p>
+</section>
+
+<footer>
+© 2026 Rohan Sarder | Cyber Security Portfolio
+</footer>
+
+<script>
+/* ENTER + SOUND */
+function enterSite(){
+  document.getElementById("enterScreen").style.display="none";
+  document.getElementById("hackSound").play();
+}
+
+/* MATRIX */
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
+function resize(){
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+}
+resize();
+window.onresize=resize;
+
+const letters="01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const fontSize=14;
+let columns=Math.floor(canvas.width/fontSize);
+let drops=new Array(columns).fill(1);
+
+function draw(){
+  ctx.fillStyle="rgba(0,0,0,0.05)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="#00ff9c";
+  ctx.font=fontSize+"px monospace";
+
+  for(let i=0;i<drops.length;i++){
+    let text=letters[Math.floor(Math.random()*letters.length)];
+    ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+    if(drops[i]*fontSize>canvas.height&&Math.random()>0.975)
+      drops[i]=0;
+    drops[i]++;
+  }
+}
+setInterval(draw,35);
+
+/* TYPING */
+const texts=["Ethical Hacker","Penetration Tester","Red Team Enthusiast"];
+let count=0,index=0;
+(function type(){
+  let current=texts[count];
+  document.getElementById("typing").textContent=current.slice(0,++index);
+  if(index===current.length){
+    setTimeout(()=>{index=0;count=(count+1)%texts.length},1500);
+  }
+  setTimeout(type,120);
+})();
+
+/* SCROLL REVEAL */
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add("active");
+  });
+},{threshold:0.2});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
